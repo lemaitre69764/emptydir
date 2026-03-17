@@ -38,12 +38,13 @@
 - Карантин писем
 - Веб-интерфейс управления карантином
 - Логирование событий (audit log)
-- Добавление заголовков анализа в письмо:
-  - X-ML-Spam
-  - X-ML-Phishing
-  - X-ML-Decision
-  - X-VT-Malicious-Attachment
+- Integration with VirusTotal (DONT INCLUDED) (based on SHA256 of attachments)
+- Email quarantine
+- Web-based quarantine management interface
+- Event logging (audit log)
+- Adding scan headers to emails:
 
 ---
 
 ## Структура проекта
+(добавите)
