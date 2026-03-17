@@ -1,0 +1,33 @@
+data_directory = /var/lib/postfix-delivery
+
+smtpd_relay_restrictions = permit_mynetworks, reject_unauth_destination
+#ot sebya
+append_dot_mydomain = no
+mydomain = local
+unknown_local_recipient_reject_code = 550
+
+mynetworks = 127.0.0.0/8
+
+smtpd_banner = $myhostname ESMTP $mail_name (Ubuntu)
+
+#ITY environment variable before starting Postfix.
+
+debugger_command =
+	 PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+	 ddd $daemon_directory/$process_name $process_id & sleep 5
+
+
+readme_directory = no
+inet_protocols = ipv4
+queue_directory = /var/spool/postfix-delivery
+authorized_submit_users = 
+#master_service_disable = inet
+
+#тут добавил от себя
+inet_interfaces = loopback-only
+myhostname = delivery.local
+mydestination = $myhostname, localhost, localhost.localdomain, local
+
+# -------------------------------------------------------------------------------------
+multi_instance_name = postfix-delivery
+multi_instance_enable = yes
